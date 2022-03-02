@@ -57,14 +57,14 @@ namespace API.Controllers
             return Ok(_mapper.Map<Product, ProductToReturnDto>(product));
         }
 
-        [HttpGet("{brands}")]
+        [HttpGet("brands")]
         public async Task<ActionResult<ProductBrand>> GetProductBrand()
         {
             var productBrand = await _productBrand.ListAllAsync();
             return Ok(productBrand);
         }
 
-        [HttpGet("{types}")]
+        [HttpGet("types")]
         public async Task<ActionResult<ProductType>> GetProductType()
         {
             var productType = await _productType.ListAllAsync();
